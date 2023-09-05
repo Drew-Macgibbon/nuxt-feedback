@@ -5,7 +5,7 @@
 To start we will work on basic functionality for our use/testing with pauses in development so we can make educated decisions for future improvements.
 
 ## Version 0.1
-- [ ] Feedback widget #1
+- [ ] #1 
 - [ ] Store feedback #2
 - [ ] Kanban to display feedback #3
 - [ ] Simple moderation system #4
