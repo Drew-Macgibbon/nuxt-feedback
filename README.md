@@ -5,12 +5,12 @@
 To start we will work on basic functionality for our use/testing with pauses in development so we can make educated decisions for future improvements.
 
 ## Version 0.1
-- [ ] #1 
-- [ ] Store feedback #2
-- [ ] Kanban to display feedback #3
-- [ ] Simple moderation system #4
-- [ ] Feedback statuses #5
-- [ ] Feedback categories #6
+- [ ] [Feedback Widget](https://github.com/Drew-Macgibbon/nuxt-feedback/issues/1) 
+- [ ] [Store feedback](https://github.com/Drew-Macgibbon/nuxt-feedback/issues/2)
+- [ ] [Kanban to display feedback](https://github.com/Drew-Macgibbon/nuxt-feedback/issues/3)
+- [ ] [Simple moderation system](https://github.com/Drew-Macgibbon/nuxt-feedback/issues/4)
+- [ ] [Feedback statuses](https://github.com/Drew-Macgibbon/nuxt-feedback/issues/5)
+- [ ] [Feedback categories](https://github.com/Drew-Macgibbon/nuxt-feedback/issues/6)
 
 ## Version 0.2
 - [ ] Connect Kanban to a GitHub
