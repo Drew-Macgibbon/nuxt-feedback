@@ -1,29 +1,55 @@
-# Nuxt 3 Supabase Auth
+# Nuxt 3 Feedback System
 
-## TODO:
+**This will eventually be a standalone product.**
 
-- [ ] **Use HttpOnly Cookies**: If possible, set the `HttpOnly` flag on cookies that store sensitive information. This makes the cookie inaccessible to JavaScript running on the page, which can help prevent cross-site scripting (XSS) attacks.
+To start we will work on basic functionality for our use/testing with pauses in development so we can make educated decisions for future improvements.
 
-- [ ] **Set Secure Cookies**: When setting cookies, use the `Secure` flag to ensure that cookies are only sent over HTTPS connections.
+## Version 0.1
+- [ ] Feedback widget
+- [ ] Store feedback
+- [ ] Kanban to display feedback
+- [ ] Simple moderation system
+- [ ] Feedback statuses
+- [ ] Feedback categories
 
-- [ ] **Implement CSRF Protection**: Cross-Site Request Forgery (CSRF) attacks can occur when handling cookies. Implementing CSRF tokens and checking them server-side can mitigate this risk.
+## Version 0.2
+- [ ] Connect Kanban to a GitHub
+- [ ] Upvote feedback
+- [ ] Rank Displayed feedback
+- [ ] Filter feedback
 
-- [ ] **Set Proper CORS Policy**: Make sure you have a proper Cross-Origin Resource Sharing (CORS) policy in place to control which domains are allowed to access your resources.
-
-- [ ] **Use a Trusted Library**: If you are dealing with JWT or other token formats, consider using a well-maintained and trusted library to handle token parsing, validation, and storage.
-
-- [ ] **Avoid Storing Tokens in LocalStorage**: While it might be tempting to store tokens in `localStorage`, it's not recommended due to potential access from XSS attacks. Cookies with proper flags (HttpOnly, Secure) are generally safer.
-
-- [ ] **Implement Token Expiry**: Make sure that tokens have a short expiration time and implement refresh tokens if necessary. This minimizes the potential damage of a token if it's compromised.
-- [ ] **Token Validation**: Always validate tokens server-side before processing the request. Client-side validation can be bypassed by an attacker.
-
-- [ ] **Handle Redirection Securely**: If you're redirecting users after login, ensure that the redirection URLs are validated and don't allow open redirection, which can be used in phishing attacks.
-
-- [ ]  **Monitor and Log**: Implement monitoring and logging to detect suspicious activities early. This includes failed login attempts, unexpected location changes, etc.
-
-- [ ]  **Provide Clear Logout Functionality**: Implement proper logout functionality that not only removes the client-side session but also invalidates the token server-side.
+## Version 0.3
+- [ ] Upvote Weighting
+- [ ] Authentication
+- [ ] Button to turn into GH issue
 
 
-## Of Note:
+## Pause Development
+---
 
-- Currently, onAuthStateChange() does not work across tabs. For instance, in the case of a password reset flow, the original tab which requested for the password reset link will not receive the SIGNED_IN and PASSWORD_RECOVERY event when the user clicks on the link. This will also impact how we handle email verification clicks [reference](https://supabase.com/docs/reference/javascript/auth-onauthstatechange)
+## Version 0.4
+- [ ] Image upload to feedback
+
+## Version 0.5
+- [ ] Turn this into a Nuxt Module
+
+## Pause Development
+---
+
+
+## Version 0.6
+- [ ] Allow users to comment on feedback (we will create a new repo for developing comments)
+
+## Version 0.7
+- [ ] Notify users about their voted/created feedback (we will create a new repo for developing a notifications system)
+
+## Version 0.8
+- [ ] Developers can customize UI 
+
+
+## Version 1.0+
+- [ ] Compare suggestions with vectorization/cosine similarity to filter out duplicates and group similar suggestions
+- [ ] Create changelog from closed feedback
+- [ ] NSFW filter
+- [ ] Screenshot tool for feedback
+- [ ] factor in previous feedback when calculating weight of new feedback
