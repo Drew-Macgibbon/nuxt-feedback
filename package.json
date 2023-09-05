@@ -9,13 +9,13 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxt/image": "^1.0.0-rc.1",
+    "@nuxt/image": "^0.7.1",
     "@nuxthq/ui": "^2.7.0",
     "@supabase/supabase-js": "^2.32.0",
     "@types/node": "^18.17.1",
     "@vee-validate/zod": "^4.11.1",
     "magic-regexp": "^0.7.0",
-    "nuxt": "^3.6.5",
+    "nuxt": "^3.7.1",
     "vee-validate": "^4.11.1",
     "zod": "^3.21.4"
   },
