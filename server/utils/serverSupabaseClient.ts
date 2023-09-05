@@ -20,6 +20,10 @@ export default async function serverSupabaseClient<T>(event: H3Event): Promise<S
     event.context._supabaseClient = supabaseClient
   }
 
+  if (!supabaseClient) {
+    throw createError({ statusMessage: 'Supabase client not found' })
+  }
+
   // check for authorized session
   const { data } = await supabaseClient.auth.getSession()
   if (data?.session?.user?.aud !== 'authenticated') {

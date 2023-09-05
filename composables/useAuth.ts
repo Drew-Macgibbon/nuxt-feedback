@@ -80,7 +80,7 @@ export default function useAuth() {
 
     if (!data) throw createError('Login Error: No data returned from supabase')
 
-    router.push('/protected')
+    router.push('/feedback')
   }
 
   async function handleInvalidEmailLink(userEmail: string) {

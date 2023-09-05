@@ -21,7 +21,7 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
   }
 
   if (isExcluded(to.path)) return
-  console.log('protected route')
+  console.log('feedback route')
 
   const user = useSupabaseUser()
   if (!user.value) {

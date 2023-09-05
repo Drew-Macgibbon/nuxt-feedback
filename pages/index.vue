@@ -1,22 +1,21 @@
 <template>
   <div>
     <h1>Hello world</h1>
-    <NuxtLink to="/protected">Test Protected</NuxtLink>
-    <UButton @click="test" > Test </UButton>
-    {{ testData }}
+    <UButton @click="getFeedback"> Get Feedback </UButton>
+    {{ feedbacks }}
   </div>
 </template>
 
 <script setup lang="ts">
-const testData = ref({})
+const feedbacks = ref({})
 
-const test = async () => {
-  const { data, error } = await useFetch('/api/test')
+const getFeedback = async () => {
+  const { data, error } = await useFetch('/api/feedback')
   if (error.value) {
     console.error(error.value)
   }
   console.log(data)
-  testData.value = data
+  feedbacks.value = data
 }
 </script>
 
