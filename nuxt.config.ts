@@ -4,6 +4,15 @@ export default defineNuxtConfig({
   pinia: {
     autoImports: ['storeToRefs', 'defineStore'],
   },
+  nitro: {
+    // Development Storage
+    devStorage: {
+      db: {
+        driver: 'fs',
+        base: './data/db',
+      },
+    },
+  },
   imports: {
     dirs: ['stores', 'data'],
   },

@@ -21,7 +21,6 @@ export default defineNuxtPlugin({
           detectSessionInUrl: false,
           persistSession: false,
           autoRefreshToken: false,
-          debug: true,
         },
       })
     }

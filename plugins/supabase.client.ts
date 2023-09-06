@@ -27,7 +27,6 @@ export default defineNuxtPlugin({
           persistSession: true,
           detectSessionInUrl: true,
           flowType: 'pkce',
-          debug: true,
         },
       })
     }
