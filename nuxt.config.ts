@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxthq/ui', 'magic-regexp/nuxt', '@nuxt/image', '@pinia/nuxt'],
+  modules: ['@nuxt/ui', 'magic-regexp/nuxt', '@nuxt/image', '@pinia/nuxt'],
   pinia: {
     autoImports: ['storeToRefs', 'defineStore'],
   },
