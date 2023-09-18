@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full bg-slate-100 py-3 px-6 gap-4 flex justify-center items-center">
+  <div class="w-full bg-slate-500 py-3 px-6 gap-4 flex justify-center items-center">
     <NuxtLink
       v-for="route in router.options.routes"
       :key="route.path"
