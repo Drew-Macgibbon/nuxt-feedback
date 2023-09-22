@@ -8,57 +8,69 @@
         rows="4"
         placeholder="Write your ideas to imporve the website."
       ></textarea>
-      <button @click="submitFeedback" class="mt-2 p-2 rounded-md bg-emerald-500 text-white w-full">
-        Submit
-      </button>
+      <button @click="submitFeedback" class="mt-2 p-2 rounded-md bg-emerald-500 text-white w-full">Submit</button>
     </div>
     <p>{{ feedbacks }}</p>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { useFeedbackTable } from '#imports'
+import { ref } from 'vue'
 
-const feedbacks = ref({});
-const showFeedbackInput = ref(false);
-const feedbackText = ref('');
+const feedbackTable = useFeedbackTable()
+
+const feedbacks = ref({})
+const showFeedbackInput = ref(false)
+const feedbackText = ref('')
 
 const toggleFeedbackInput = () => {
-  showFeedbackInput.value = !showFeedbackInput.value;
-};
+  showFeedbackInput.value = !showFeedbackInput.value
+}
 
 const submitFeedback = async () => {
+  console.log(feedbackText.value)
+
   if (feedbackText.value.trim() === '') {
-    alert('Please enter your suggestions before submitting.');
-    return;
+    console.log('Please enter your suggestions before submitting.')
+    return
   }
 
   const newFeedback = {
-    title: 'User Feedback',
-    body: feedbackText.value,
     created_at: new Date().toISOString(),
     updated_at: new Date().toISOString(),
-    user_id: 'Fetch from Supabase Auth',
-    votes: 0,
+    title: 'User Feedback',
+    body: feedbackText.value,
+    // user_id: 'Fetch from Supabase Auth',
     votes_weighted: 0.0,
-    status: 'open',
-    category: 'feedback',
-  };
+    gh_issue: '',
+    status: 0,
+    priority: 0,
+    github_pr: '',
+    size: 0,
+    category: 0,
+    votes: 0,
+  }
+  try {
+    await feedbackTable.createFeedback(newFeedback)
+    console.log('Feedback submitted and a new task has been created.')
+  } catch (error) {
+    console.error(error)
+  }
 
-  feedbacks.value = [newFeedback, feedbacks.value];
-  feedbackText.value = '';
-};
+  feedbackText.value = ''
+}
 
 const getFeedback = async () => {
-  const { data, error } = await useFetch('/api/feedback');
+  const { data, error } = await useFetch('/api/feedback')
   if (error.value) {
-    console.error(error.value);
+    console.error(error.value)
   } else {
-    feedbacks.value = data;
+    feedbacks.value = data
   }
-};
+}
 
 definePageMeta({
   layout: 'feedback',
-});
+})
 </script>
