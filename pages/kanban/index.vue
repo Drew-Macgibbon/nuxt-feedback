@@ -1,6 +1,6 @@
 <template>
     <div>
-            <Kanban/>
+        <Kanban/>
     </div>
 </template>
 

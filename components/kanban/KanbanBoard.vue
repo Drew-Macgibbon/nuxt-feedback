@@ -65,7 +65,7 @@ const inProgress = [
 const done = [
   {
     id: 7,
-    title: 'Completed Task 1',
+    title: 'Task 1',
     description: 'Description for Completed Task 1',
     priority: 'High',
     postedBy: 'User G',
@@ -75,7 +75,7 @@ const done = [
 const backlog = [
   {
     id: 8,
-    title: 'Backlog Item 1',
+    title: 'Item 1',
     description: 'Description for Backlog Item 1',
     priority: 'Medium',
     postedBy: 'User H',
@@ -85,7 +85,7 @@ const backlog = [
 const cancelled = [
   {
     id: 9,
-    title: 'Cancelled Item 1',
+    title: 'Item 1',
     description: 'Description for Cancelled Item 1',
     priority: 'Low',
     postedBy: 'User I',
