@@ -20,42 +20,46 @@
               <h3 class="text-base font-semibold leading-6">
                 {{ data.title }}
               </h3>
+              
               <UButton color="gray" variant="ghost" icon="i-heroicons-x-mark-20-solid" class="-my-1"
                 @click="isOpen = false" />
             </div>
-          </template>
-          <div class="p-4 ">
-            <div class="flex justify-between mb-4">
-              <span class="text-gray-400">Posted by</span>
-              <UAvatar chip-color="primary" chip-text="" chip-position="top-right" size="sm" />
-            </div>
-            <div class="flex justify-between mb-4">
-              <span class="text-gray-400">Priority</span>
-              <UBadge :color="badgeColor" variant="subtle">{{ data.priority }}</UBadge>
-            </div>
-            <div class="flex justify-between mb-4">
-              <span class="text-gray-400">Description</span>
-              <p class="text-md text-gray-200 font-semibold">{{ data.description }}</p>
-            </div>
-            <div class="flex justify-between mb-4">
-              <span class="text-gray-400">Status</span>
-              <p class="text-md text-gray-200 font-semibold">{{ data.status }}</p>
-            </div>
-            <div class="flex justify-between mb-4">
-              <span class="text-gray-400">Created on</span>
-              <p class="text-md text-gray-200 font-semibold">{{ data.createdDate }}</p>
-            </div>
-            <div class="flex justify-between mb-4">
-              <span class="text-gray-400">Due</span>
-              <p class="text-md text-gray-200 font-semibold">{{ data.dueDate }}</p>
-            </div>
-            <div class="flex justify-between mb-4">
-              <span class="text-gray-400">Category</span>
-              <div>
-                <UBadge color="orange" variant="soft" v-for="tag in data.tags" :key="tag" class="ml-2">{{ tag }}</UBadge>
+            <div class="mt-4 flex flex-wrap justify-between text-sm">
+              <div class="mb-4 w-1/2">
+                <span class="text-gray-400 mr-4">Posted by</span>
+                <UAvatar chip-color="primary" chip-text="" chip-position="top-right" size="xs" />
               </div>
+              <div class="mb-4 w-1/2">
+                <span class="text-gray-400 mr-4">Priority</span>
+                <UBadge :color="badgeColor" variant="subtle">{{ data.priority }}</UBadge>
+              </div>
+              <div class="flex w-1/2 mb-4">
+                <span class="text-gray-400 mr-4">Status </span>
+                <p class="text-md text-gray-200 font-semibold"> {{ data.status }} </p>
+              </div>
+              <div class="w-1/2 flex">
+                <span class="text-gray-400 mr-2">Category</span>
+                <div>
+                  <UBadge color="orange" variant="soft" v-for="tag in data.tags" :key="tag" class="ml-2">{{ tag }}
+                  </UBadge>
+                </div>
+              </div>
+              <div class="flex w-1/2">
+              <span class="text-gray-400 mr-4">Created </span>
+              <p class=" text-gray-200 font-semibold">{{ getRelativeTime(data.createdDate) }}</p>
             </div>
-          </div>
+            </div>
+          </template>
+            <div class="mb-4">
+              <span class="text-gray-400 mt-2">Description</span>
+              <p class="text-md text-gray-200 font-semibold mt-4">{{ data.description }}</p>
+            </div>
+          <template #footer>
+            <div class="mb-4">
+              <span class="text-gray-400 mt-2">Comments coming soon</span>
+            </div>
+            
+          </template>
         </UCard>
       </UModal>
     </div>
@@ -64,6 +68,7 @@
 
 <script setup>
 import { defineProps } from 'vue';
+import { formatDistanceToNow } from 'date-fns';
 
 const props = defineProps({
   data: Object,
@@ -85,4 +90,9 @@ const badgeColor = computed(() => {
       return 'gray';
   }
 });
+
+const getRelativeTime = (dateString) => {
+  const createdDate = new Date(dateString);
+  return formatDistanceToNow(createdDate, { addSuffix: true });
+};
 </script>
