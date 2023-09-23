@@ -9,36 +9,39 @@
     </div>
   </div>
 </template>
-  
+
 <script setup>
-import KanbanCard from './KanbanCard.vue';
-import { defineProps } from 'vue';
+// these are auto-imported
+// import KanbanCard from './KanbanCard.vue';
+// import { defineProps } from 'vue';
 
 const props = defineProps({
   title: String,
   items: Array,
-});
+})
 
-const title = props.title;
-const items = props.items;
+// destructuring like this is not needed, you can simply use title and items in the template
+// unless you use const props =, then you will have to use props.title and props.items
+// the only time you ned to use const props is if you need to directly use props in the script setup, which is unusual
+const title = props.title
+const items = props.items
 
 const getIconForTitle = () => {
   switch (title.toLowerCase()) {
     case 'issues':
-      return 'i-heroicons-light-bulb'; 
+      return 'i-heroicons-light-bulb'
     case 'todo':
-      return 'i-ic-round-access-time'; 
+      return 'i-ic-round-access-time'
     case 'in-progress':
-      return 'i-mdi-circle-slice-4'; 
+      return 'i-mdi-circle-slice-4'
     case 'done':
-      return 'i-ic-round-check-circle-outline'; 
+      return 'i-ic-round-check-circle-outline'
     case 'backlog':
-      return 'i-heroicons-archive-box'; 
+      return 'i-heroicons-archive-box'
     case 'cancelled':
-      return 'i-mdi-close-circle-outline'; 
+      return 'i-mdi-close-circle-outline'
     default:
-      return 'i-heroicons-question-mark-circle'; 
+      return 'i-heroicons-question-mark-circle'
   }
-};
-
+}
 </script>

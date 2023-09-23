@@ -1,17 +1,55 @@
 <template>
-    <div class="w-full flex flex-row">
-      <KanbanColumn title="Issues" :items="issues" />
-      <KanbanColumn title="Todo" :items="todo" />
-      <KanbanColumn title="In-progress" :items="inProgress" />
-      <KanbanColumn title="Done" :items="done" />
-      <KanbanColumn title="Backlog" :items="backlog" />
-      <KanbanColumn title="Cancelled" :items="cancelled" />
-    </div>
-  </template>
-  
-  <script setup>
-  import KanbanColumn from './KanbanColumn.vue';
-  const issues = [
+  <div class="w-full flex flex-row">
+    <!-- <KanbanColumn v-for="column in feedback" :key="column.title" :title="column.title" :items="column.items" />  -->
+    <KanbanColumn title="Issues" :items="issues" />
+    <KanbanColumn title="Todo" :items="todo" />
+    <KanbanColumn title="In-progress" :items="inProgress" />
+    <KanbanColumn title="Done" :items="done" />
+    <KanbanColumn title="Backlog" :items="backlog" />
+    <KanbanColumn title="Cancelled" :items="cancelled" />
+  </div>
+</template>
+
+<script setup>
+// import KanbanColumn from './KanbanColumn.vue';
+
+// I know this is just dummy data, for reference of how I would have done it
+// const feedback = [
+//   {
+//     title: 'Issues'
+//     items: [
+//       {
+//         id: 1,
+//         title: 'Issue 1',
+//         description: 'Description for Issue 1',
+//         priority: 'High',
+//         postedBy: 'User A',
+//         createdDate: '2023-01-15',
+//         dueDate: '2023-02-28',
+//         assignedTo: 'User X',
+//         tags: ['Bug', 'Critical'],
+//         status: 'Issue',
+//       },
+//       {
+//         id: 11,
+//         title: 'Issue 2',
+//         description: 'Description for Issue 2',
+//         priority: 'Medium',
+//         postedBy: 'User AB',
+//         createdDate: '2023-01-15',
+//         dueDate: '2023-02-28',
+//         assignedTo: 'User X',
+//         tags: ['Bug', 'Critical'],
+//         status: 'Issue',
+//       },
+//     ]
+//   }
+//   etc...
+// ]
+
+// now we can use a v-for loop to render the columns
+
+const issues = [
   {
     id: 1,
     title: 'Issue 1',
@@ -36,7 +74,7 @@
     tags: ['Bug', 'Critical'],
     status: 'Issue',
   },
-];
+]
 
 const todo = [
   {
@@ -51,7 +89,7 @@ const todo = [
     tags: ['Feature', 'Urgent'],
     status: 'Todo',
   },
-];
+]
 
 const inProgress = [
   {
@@ -66,7 +104,7 @@ const inProgress = [
     tags: ['Task', 'In Progress'],
     status: 'In-progress',
   },
-];
+]
 
 const done = [
   {
@@ -81,7 +119,7 @@ const done = [
     tags: ['Completed', 'Feature'],
     status: 'Done',
   },
-];
+]
 
 const backlog = [
   {
@@ -96,7 +134,7 @@ const backlog = [
     tags: ['Backlog', 'Enhancement'],
     status: 'Backlog',
   },
-];
+]
 
 const cancelled = [
   {
@@ -110,8 +148,6 @@ const cancelled = [
     assignedTo: 'User J',
     tags: ['Cancelled'],
     status: 'Cancelled',
-  }
-];
-
-  </script>
-  
+  },
+]
+</script>
