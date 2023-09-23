@@ -5,7 +5,7 @@
       {{ title }}
     </h2>
     <div class="mt-4 space-y-4">
-      <KanbanCard v-for="item in items" :key="item.id" :data="item" />
+      <KanbanCard v-for="item in items" :key="item.id" :data="item" @open-modal="openModal" />
     </div>
   </div>
 </template>

@@ -18,20 +18,23 @@
     description: 'Description for Issue 1',
     priority: 'High',
     postedBy: 'User A',
+    createdDate: '2023-01-15',
+    dueDate: '2023-02-28',
+    assignedTo: 'User X',
+    tags: ['Bug', 'Critical'],
+    status: 'Issue',
   },
   {
-    id: 2,
+    id: 11,
     title: 'Issue 2',
     description: 'Description for Issue 2',
     priority: 'Medium',
-    postedBy: 'User B',
-  },
-  {
-    id: 3,
-    title: 'Issue 3',
-    description: 'Description for Issue 3',
-    priority: 'Low',
-    postedBy: 'User C',
+    postedBy: 'User AB',
+    createdDate: '2023-01-15',
+    dueDate: '2023-02-28',
+    assignedTo: 'User X',
+    tags: ['Bug', 'Critical'],
+    status: 'Issue',
   },
 ];
 
@@ -42,13 +45,11 @@ const todo = [
     description: 'Description for Task 1',
     priority: 'High',
     postedBy: 'User D',
-  },
-  {
-    id: 5,
-    title: 'Task 2',
-    description: 'Description for Task 2',
-    priority: 'Medium',
-    postedBy: 'User E',
+    createdDate: '2023-03-10',
+    dueDate: '2023-03-25',
+    assignedTo: 'User E',
+    tags: ['Feature', 'Urgent'],
+    status: 'Todo',
   },
 ];
 
@@ -59,6 +60,11 @@ const inProgress = [
     description: 'Description for Task 3',
     priority: 'Low',
     postedBy: 'User F',
+    createdDate: '2023-04-05',
+    dueDate: '2023-04-20',
+    assignedTo: 'User G',
+    tags: ['Task', 'In Progress'],
+    status: 'In-progress',
   },
 ];
 
@@ -69,6 +75,11 @@ const done = [
     description: 'Description for Completed Task 1',
     priority: 'High',
     postedBy: 'User G',
+    createdDate: '2023-02-20',
+    dueDate: '2023-03-05',
+    assignedTo: 'User H',
+    tags: ['Completed', 'Feature'],
+    status: 'Done',
   },
 ];
 
@@ -79,6 +90,11 @@ const backlog = [
     description: 'Description for Backlog Item 1',
     priority: 'Medium',
     postedBy: 'User H',
+    createdDate: '2023-05-01',
+    dueDate: '2023-06-15',
+    assignedTo: 'Unassigned',
+    tags: ['Backlog', 'Enhancement'],
+    status: 'Backlog',
   },
 ];
 
@@ -89,7 +105,12 @@ const cancelled = [
     description: 'Description for Cancelled Item 1',
     priority: 'Low',
     postedBy: 'User I',
-  },
+    createdDate: '2023-03-15',
+    dueDate: null,
+    assignedTo: 'User J',
+    tags: ['Cancelled'],
+    status: 'Cancelled',
+  }
 ];
 
   </script>
