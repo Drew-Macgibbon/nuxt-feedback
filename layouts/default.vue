@@ -1,8 +1,8 @@
 <template>
-  <div class="flex flex-col h-screen overflow-hidden">
+  <div class="flex flex-col h-screen  overflow-hidden">
     <NavTop />
     <div class="flex-grow flex relative p-4 lg:p-8">
-      <UCard class=" flex justify-center items-center relative min-w-[480px] max-w-[80%] z-10">
+      <UCard class=" flex justify-center items-center relative min-w-[480px] max-w-full z-10">
         <slot />
       </UCard>
       <div class="absolute left-0 top-0 w-full h-full m-0">

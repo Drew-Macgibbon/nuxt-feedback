@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-row space-x-4 overflow-x-auto">
+    <div class="w-full flex flex-row">
       <KanbanColumn title="Issues" :items="issues" />
       <KanbanColumn title="Todo" :items="todo" />
       <KanbanColumn title="In-progress" :items="inProgress" />

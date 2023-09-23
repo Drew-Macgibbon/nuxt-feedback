@@ -16,6 +16,9 @@ export default defineNuxtConfig({
   imports: {
     dirs: ['stores', 'data'],
   },
+  ui: {
+    icons: 'all',
+  },
   runtimeConfig: {
     SUPABASE_SERVICE_KEY: process.env.SUPABASE_SERVICE_KEY,
     ADMIN_EMAILS: process.env.ADMIN_EMAILS,

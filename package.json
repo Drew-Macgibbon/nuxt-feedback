@@ -20,5 +20,11 @@
     "pinia": "^2.1.6",
     "vee-validate": "^4.11.1",
     "zod": "^3.21.4"
+  },
+  "dependencies": {
+    "@iconify-json/heroicons-outline": "^1.1.7",
+    "@iconify-json/heroicons-solid": "^1.1.8",
+    "@iconify-json/mdi": "^1.1.54",
+    "@iconify/json": "^2.2.119"
   }
 }

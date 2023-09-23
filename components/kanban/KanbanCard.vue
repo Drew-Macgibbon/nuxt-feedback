@@ -1,7 +1,14 @@
 <template>
-  <div class="bg-white p-4 rounded-md shadow-md cursor-pointer" @click="isOpen = true">
-    <h3 class="text-md font-semibold text-gray-600">{{ data.title }}</h3>
-    <div class="mt-2 flex items-center">
+  <div class="bg-white p-4 rounded-md shadow-lg cursor-pointer hover:shadow-sm" @click="isOpen = true">
+    <div class="flex">
+      <UIcon name="i-mdi-record-circle-outline" class="w-4 h-4 text-green-600" />
+      <span class="ml-1 text-xs text-gray-400">#{{ data.id }}</span>
+      <!-- <UAvatar class="justify-end p-1 m-auto" size="xs" /> -->
+    </div>
+    <div class="flex justify-between">
+      <h3 class="text-sm mt-1 font-semibold text-gray-600">{{ data.title }}</h3>
+    </div>
+    <div class="mt-4 flex items-center">
       <UBadge :color="badgeColor" variant="subtle">{{ data.priority }}</UBadge>
       <span class="ml-2 text-xs text-gray-400">{{ data.postedBy }}</span>
     </div>
