@@ -9,8 +9,9 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxt/devtools": "^0.8.4",
     "@nuxt/image": "^1.0.0-rc.1",
-    "@nuxt/ui": "^2.8.0",
+    "@nuxt/ui": "^2.8.1",
     "@pinia/nuxt": "^0.4.11",
     "@supabase/supabase-js": "^2.32.0",
     "@types/node": "^18.17.1",
