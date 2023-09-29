@@ -12,7 +12,7 @@ export const feedbackSchema = feedbackSubmittedSchema.extend({
   updated_at: z.string(),
   votes_weighted: z.number(),
   gh_issue: z.string(),
-  status: z.number(),
+  status_id: z.number(),
   priority: z.number(),
   github_pr: z.string(),
   size: z.number(),

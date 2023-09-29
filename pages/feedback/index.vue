@@ -2,6 +2,7 @@
   <div class="py-32">
     <button class="p-2 rounded-md bg-emerald-500 text-white" @click="toggleFeedbackInput">Get Feedback</button>
     <div v-if="showFeedbackInput" class="mt-4">
+      <input v-model="userFeedback.title" class="border rounded p-2 w-full" rows="4" placeholder="Feedback title" />
       <textarea
         v-model="userFeedback.body"
         class="border rounded p-2 w-full"
@@ -28,7 +29,8 @@ import { FeedbackSubmitted } from '~/types/feedback'
 // I have extracted most of the logic to the store, separating concerns.
 
 const userFeedback = ref({
-  title: 'Test',
+  user_id: '35b4a2da-ec8e-4e15-909c-9de13acbc1db',
+  title: '',
   body: '',
   category_id: 0,
 } as FeedbackSubmitted)
