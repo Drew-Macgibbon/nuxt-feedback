@@ -39,7 +39,6 @@ export default defineStore('feedback', () => {
   }
 
   const submitFeedback = async (userFeedback: FeedbackSubmitted): Promise<void> => {
-    console.log('userFeedback: ', userFeedback)
     const validatedFeedback = feedbackSubmittedSchema.safeParse(userFeedback)
     if (!validatedFeedback.success) {
       console.log('Please enter your suggestions before submitting.')
@@ -64,11 +63,7 @@ export default defineStore('feedback', () => {
     }
 
     try {
-      console.log(newFeedback)
-
-      const res = await createFeedback(newFeedback)
-      console.log('res: ', res)
-
+      await createFeedback(newFeedback)
       console.log('Feedback submitted and a new task has been created.')
       // !TODO redirect to provide indication of success
     } catch (error) {
