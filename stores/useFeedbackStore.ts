@@ -39,7 +39,6 @@ export default defineStore('feedback', () => {
   }
 
   const submitFeedback = async (userFeedback: FeedbackSubmitted): Promise<void> => {
-    console.log('userFeedback: ', userFeedback)
     const validatedFeedback = feedbackSubmittedSchema.safeParse(userFeedback)
     if (!validatedFeedback.success) {
       console.log('Please enter your suggestions before submitting.')
@@ -52,10 +51,10 @@ export default defineStore('feedback', () => {
       updated_at: new Date().toISOString(), // set on supabase row entry
       title: validatedFeedback.data.title,
       body: validatedFeedback.data.body,
-      // user_id: 'Fetch from Supabase Auth',
+      user_id: validatedFeedback.data.user_id,
       votes_weighted: 0.0,
       gh_issue: '', // set null on supabase row entry
-      status: 0,
+      status_id: 0,
       priority: 0,
       github_pr: '', // set null on supabase row entry
       size: 0,
@@ -64,11 +63,7 @@ export default defineStore('feedback', () => {
     }
 
     try {
-      console.log(newFeedback)
-
-      const res = await createFeedback(newFeedback)
-      console.log('res: ', res)
-
+      await createFeedback(newFeedback)
       console.log('Feedback submitted and a new task has been created.')
       // !TODO redirect to provide indication of success
     } catch (error) {
