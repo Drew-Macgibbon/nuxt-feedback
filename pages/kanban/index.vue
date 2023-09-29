@@ -1,9 +1,8 @@
 <template>
     <div>
-        <Kanban/>
+        <KanbanBoard/>
     </div>
 </template>
 
-<script setup>
-import Kanban from '@/components/kanban/KanbanBoard.vue';
+<script setup lang="ts">
 </script>
