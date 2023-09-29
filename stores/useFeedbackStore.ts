@@ -51,7 +51,7 @@ export default defineStore('feedback', () => {
       updated_at: new Date().toISOString(), // set on supabase row entry
       title: validatedFeedback.data.title,
       body: validatedFeedback.data.body,
-      user_id: '35b4a2da-ec8e-4e15-909c-9de13acbc1db',
+      user_id: validatedFeedback.data.user_id,
       votes_weighted: 0.0,
       gh_issue: '', // set null on supabase row entry
       status_id: 0,
