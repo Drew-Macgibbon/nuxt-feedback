@@ -3,7 +3,7 @@ import { z } from 'zod'
 export const feedbackSubmittedSchema = z.object({
   title: z.string(),
   body: z.string(),
-  user_id: z.string(),
+  user_id: z.string().optional(),
   category_id: z.number(),
 })
 

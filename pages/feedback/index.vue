@@ -28,10 +28,9 @@ import { FeedbackSubmitted } from '~/types/feedback'
 // I have extracted most of the logic to the store, separating concerns.
 
 const userFeedback = ref({
-  title: '',
+  title: 'Test',
   body: '',
   category_id: 0,
-  user_id: 0,
 } as FeedbackSubmitted)
 const showFeedbackInput = ref(false)
 

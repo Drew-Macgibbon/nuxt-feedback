@@ -39,7 +39,7 @@ export default defineStore('feedback', () => {
   }
 
   const submitFeedback = async (userFeedback: FeedbackSubmitted): Promise<void> => {
-    console.log(userFeedback)
+    console.log('userFeedback: ', userFeedback)
     const validatedFeedback = feedbackSubmittedSchema.safeParse(userFeedback)
     if (!validatedFeedback.success) {
       console.log('Please enter your suggestions before submitting.')
@@ -64,11 +64,15 @@ export default defineStore('feedback', () => {
     }
 
     try {
-      await createFeedback(newFeedback)
+      console.log(newFeedback)
+
+      const res = await createFeedback(newFeedback)
+      console.log('res: ', res)
+
       console.log('Feedback submitted and a new task has been created.')
       // !TODO redirect to provide indication of success
     } catch (error) {
-      console.error(error)
+      console.log('error', error)
       // !TODO toast notification to indicate failure
     }
   }
@@ -88,5 +92,6 @@ export default defineStore('feedback', () => {
     fetchFeedbacks,
     getFeedback,
     submitFeedback,
+    feedbacks,
   }
 })
